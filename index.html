@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Momentum</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Weather -->
+    <div class="weather__container">
+      <div class="weather">
+        <div class="weather__icon" id="weather__icon">Sun</div>
+        <div class="weather__temperature" id="weather__temperature">22</div>
+      </div>
+      <div class="weather__location" id="weather__location">Sydney</div>
+    </div>
+
+    <!--Main-->
+    <div class="main__container">
+      <!--TIME & Greeting-->
+      <section>
+        <span class="time time__container" id="time"></span>
+        <div class="greeting">
+          <form class="greeting__form" id="greeting__form">
+            <input
+              class="greeting__input"
+              id="greeting__input"
+              type="text"
+              placeholder="What's your name?"
+            />
+          </form>
+          <p id="greeting__message" class="greeting__message"></p>
+        </div>
+      </section>
+
+      <!--TODO-->
+      <section class="todo__container" id="todo__container">
+        <p class="todo__title">To Do of the Day</p>
+        <form class="todo__form" id="todo__form">
+          <input class="todo__input" id="todo__input" type="text" />
+        </form>
+        <ul class="todo__list" id="todo__list"></ul>
+      </section>
+    </div>
+
+    <!-- Quote -->
+    <div class="quote__container">
+      <p class="quote"></p>
+      <div class="quote__author"></div>
+    </div>
+
+    <div class="dimmer"></div>
+
+    <script type="module" src="js/main.js" charset="utf-8"></script>
+  </body>
+</html>
