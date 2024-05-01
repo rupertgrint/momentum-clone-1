@@ -11,6 +11,7 @@ function loadTodos() {
   if (savedTodos === null) return;
   const parsedTodos = JSON.parse(savedTodos);
   parsedTodos.forEach(({ todo }) => paintTodo(todo));
+  saveTodos();
 }
 
 function saveTodos(text) {
@@ -21,14 +22,10 @@ function paintTodo(todo) {
   const list = document.createElement('li');
   const removeButton = document.createElement('button');
   const id = todos.length + 1;
+  list.id = id;
   list.textContent = todo;
   removeButton.textContent = 'x';
   list.appendChild(removeButton);
-  removeButton.addEventListener('click', (event) => {
-    list.remove();
-    todos = todos.filter((todo) => todo.id !== id);
-    saveTodos();
-  });
   toDoList.appendChild(list);
   todos.push({ todo, id });
 }
@@ -42,7 +39,16 @@ function handleSubmit(event) {
   toDoInput.value = '';
 }
 
+function removeTodo(event) {
+  if (event.target.tagName !== 'BUTTON') return;
+  const targetList = event.target.parentNode;
+  toDoList.removeChild(targetList);
+  todos = todos.filter((todo) => todo.id !== +targetList.id);
+  saveTodos();
+}
+
 export function initTodo() {
   loadTodos();
   toDoForm.addEventListener('submit', handleSubmit);
+  toDoList.addEventListener('click', removeTodo);
 }
