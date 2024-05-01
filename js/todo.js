@@ -1,51 +1,28 @@
-function addToDo() {
-  const newToDo = document.getElementById('todo__input').value;
-  if (newToDo !== '') {
-    localStorage.setItem('savedToDo', newToDo);
+let newToDo = document.getElementById('todo__input');
+const toDoContainer = document.querySelector('.todo__container');
+
+export function addToDo() {
+  toDoContainer.style.display = 'block';
+
+  if (newToDo.value !== '') {
+    localStorage.setItem('savedToDo', newToDo.value);
 
     const list = document.createElement('li');
-    list.textContent = newToDo;
+    list.innerHTML = newToDo.value;
 
     const removeButton = document.createElement('button');
-    removeButton.textContent = 'x';
+    removeButton.innerText = 'x';
+    list.appendChild(removeButton);
     removeButton.addEventListener('click', function () {
       list.remove();
-      removeButton.remove();
       localStorage.removeItem('savedToDo');
     });
-
-    list.appendChild(removeButton);
-    document.getElementById('todo__list').appendChild(list);
-
-    const todoList = document.getElementById('todo__list');
-    todoList.appendChild(list);
+    document.querySelector('.todo__list').appendChild(list);
   }
+  newToDo.value = '';
 }
 
-document.getElementById('todo__input').addEventListener('keypress', (event) => {
-  if (event.keyCode == 13) {
-    event.preventDefault();
-    addToDo();
-    document.getElementById('todo__input').value = '';
-  }
+document.querySelector('.todo__form').addEventListener('submit', (event) => {
+  event.preventDefault();
+  addToDo();
 });
-
-export function showToDo() {
-  document.getElementById('todo__container').style.display = 'block';
-  const savedToDo = localStorage.getItem('savedToDo');
-  if (savedToDo !== null && savedToDo !== '') {
-    const list = document.createElement('li');
-    list.textContent = savedToDo;
-
-    const removeButton = document.createElement('button');
-    removeButton.textContent = 'x';
-    removeButton.addEventListener('click', function () {
-      list.remove();
-      removeButton.remove();
-      localStorage.removeItem('savedToDo');
-    });
-
-    list.appendChild(removeButton);
-    document.getElementById('todo__list').appendChild(list);
-  }
-}
