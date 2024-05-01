@@ -1,5 +1,7 @@
-let newToDo = document.getElementById('todo__input');
-const toDoContainer = document.querySelector('.todo__container');
+const toDoContainer = document.getElementById('todo__container');
+const toDoForm = document.getElementById('todo__form');
+const toDoInput = document.getElementById('todo__input');
+const toDoList = document.getElementById('todo__list');
 
 export function addToDo() {
   toDoContainer.style.display = 'block';
@@ -17,12 +19,12 @@ export function addToDo() {
       list.remove();
       localStorage.removeItem('savedToDo');
     });
-    document.querySelector('.todo__list').appendChild(list);
+  toDoList.appendChild(list);
   }
   newToDo.value = '';
 }
 
-document.querySelector('.todo__form').addEventListener('submit', (event) => {
+toDoForm.addEventListener('submit', (event) => {
   event.preventDefault();
   addToDo();
 });
