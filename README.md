@@ -23,8 +23,8 @@ A clone of the popular Momentum app, built with JavaScript, CSS, and JSON. This 
 To run this project locally:
 ### 1.Clone the repository:
 ```bash
-git clone https://github.com/yourusername/momentum-clone.git
-cd momentum-clone
+git clone https://github.com/yourusername/momentum-clone-1.git
+cd momentum-clone-1
 ```
 ### 2. Open the App in Your Browser:
 - Open index.html in your preferred browser.
