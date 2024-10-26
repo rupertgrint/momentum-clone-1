@@ -2,7 +2,7 @@ const weather = document.querySelector('.weather');
 const temperature = document.querySelector('.weather__temperature');
 const location = document.querySelector('.weather__location');
 
-const API_KEY = '9facd8cde4cc4990b66ac57dff1b49f9';
+const API_KEY = '';
 const API_BASE_URL = 'https://api.openweathermap.org/data/2.5/weather';
 const COORDS = 'coords';
 
