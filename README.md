@@ -1,4 +1,4 @@
-![Screen Shot 2024-10-26 at 9 42 00 pm](https://github.com/user-attachments/assets/d0e9fbb4-cb8f-4a11-8d09-02c123f8a70a)# Momentum App Clone
+# Momentum App Clone
 
 A clone of the popular Momentum app, built with JavaScript, CSS, and JSON. This app provides a personalised dashboard experience that includes a to-do list, greeting, local weather, time display, and motivational quotes.
 
@@ -31,6 +31,7 @@ cd momentum-clone
 - If you’re using VS Code, you can right-click index.html and choose Open with Live Server (requires the Live Server extension).
 
 ## Project Structure
+```
 src/
 │
 ├── css/              # CSS files for styling
@@ -45,6 +46,7 @@ src/
 │   └── weather.js    # Script for fetching and displaying weather
 ├── quotes.json       # JSON file containing quotes data
 └── index.html        # Main HTML file
+```
 
 ## API Setup
 To enable the weather feature, you’ll need an API key from OpenWeatherMap:
@@ -57,7 +59,6 @@ Insert your API key in weather.js where indicated.
 ![Screen Shot 2024-10-26 at 9 40 40 pm](https://github.com/user-attachments/assets/5ba47ec9-a7de-41da-84c1-bbb347528b76)
 
 - Greetings 
-![Uploading Screen Shot 2024-10-26 at 9.37.59 pm.png…]()
 ![Screen Shot 2024-10-26 at 9 42 00 pm](https://github.com/user-attachments/assets/e13349df-7d47-436f-aedc-65ae8a415427)
   
 - Adding a To-do
